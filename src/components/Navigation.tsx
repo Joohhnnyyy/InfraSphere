@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Globe, Map, BarChart3, FlaskConical, Lightbulb, Info, Menu, X } from "lucide-react";
+import { Globe, Map, BarChart3, FlaskConical, Lightbulb, Info, Menu, X, LogIn } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { href: "/", label: "Home", icon: Globe },
@@ -63,6 +64,17 @@ export function Navigation() {
             })}
           </div>
 
+          <div className="hidden md:flex items-center gap-4">
+            <Link href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Log in
+            </Link>
+            <Link href="/signup">
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Sign up
+              </Button>
+            </Link>
+          </div>
+
           <button
             className="md:hidden p-2 rounded-lg hover:bg-secondary"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -99,6 +111,21 @@ export function Navigation() {
                 </Link>
               );
             })}
+            <div className="pt-4 mt-2 border-t border-border flex flex-col gap-3">
+              <Link
+                href="/login"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+              >
+                <LogIn className="w-5 h-5" />
+                <span className="font-medium">Log in</span>
+              </Link>
+              <Link href="/signup" onClick={() => setMobileOpen(false)} className="px-4">
+                <Button className="w-full bg-primary text-primary-foreground">
+                  Sign up
+                </Button>
+              </Link>
+            </div>
           </div>
         </motion.div>
       )}
