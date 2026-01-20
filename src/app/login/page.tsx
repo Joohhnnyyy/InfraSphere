@@ -36,14 +36,14 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <Card className="glass-panel border-sidebar-border/50 shadow-xl backdrop-blur-xl">
+        <Card className="glass-panel border-border/50 shadow-xl backdrop-blur-xl">
           <CardHeader>
             <CardTitle>Sign In</CardTitle>
             <CardDescription>
               Enter your credentials to continue
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 reveal-stagger">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
@@ -52,7 +52,7 @@ export default function LoginPage() {
                   id="email" 
                   placeholder="name@example.com" 
                   type="email" 
-                  className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function LoginPage() {
                   id="password" 
                   type="password" 
                   placeholder="••••••••" 
-                  className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>

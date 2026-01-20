@@ -29,7 +29,7 @@ export function Navigation() {
               <div className="absolute inset-1 bg-primary/40 rounded-lg rotate-45" />
               <Globe className="absolute inset-2 w-6 h-6 text-primary" />
             </div>
-            <span className="text-xl font-bold tracking-tight">
+            <span className="text-xl font-bold tracking-tight font-display">
               Infra<span className="text-primary">Sphere</span>
             </span>
           </Link>

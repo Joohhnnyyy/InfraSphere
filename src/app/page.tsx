@@ -22,15 +22,8 @@ import {
   Network,
   Activity,
   Leaf,
-  Scale,
-  Workflow,
-  Brain,
-  LineChart,
-  MapPin,
-  Cpu,
-  FileCheck,
-  Award,
-  Rocket
+  Rocket,
+  Award
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -39,25 +32,25 @@ const features = [
     icon: Eye,
     title: "Real-Time Visualization",
     description: "See your city's heartbeat through interactive maps showing zones, traffic, and infrastructure.",
-    color: "from-cyan-500 to-teal-500"
+    color: "from-primary to-cyan-400"
   },
   {
     icon: Layers,
     title: "Infrastructure Layers",
     description: "Toggle between transport, energy, and water systems to understand city networks.",
-    color: "from-violet-500 to-purple-500"
+    color: "from-indigo-500 to-purple-500"
   },
   {
     icon: Zap,
     title: "Simulation Engine",
     description: "Test policies before implementation. See how changes ripple through the entire system.",
-    color: "from-amber-500 to-orange-500"
+    color: "from-amber-400 to-orange-500"
   },
   {
     icon: BarChart3,
     title: "Smart Analytics",
     description: "Track sustainability scores, pollution indices, and service accessibility in real-time.",
-    color: "from-emerald-500 to-green-500"
+    color: "from-emerald-400 to-green-500"
   }
 ];
 
@@ -99,7 +92,7 @@ const userPersonas = [
     access: "Full dashboard, simulation approvals, citywide metrics"
   },
   {
-    icon: MapPin,
+    icon: Network,
     role: "Urban Planners",
     description: "Deep dive into infrastructure layers, run detailed simulations, design interventions.",
     access: "All layers, simulation engine, zone-level analytics"
@@ -189,7 +182,7 @@ const implementationPhases = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground font-sans">
       <Navigation />
       
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
@@ -216,7 +209,7 @@ export default function Home() {
                 <span className="text-sm font-medium text-muted-foreground">World Governments Summit Innovation</span>
               </motion.div>
 
-              <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-6">
+              <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-6 font-display">
                 <span className="text-foreground">A Living</span>
                 <br />
                 <span className="bg-gradient-to-r from-primary via-cyan-400 to-accent bg-clip-text text-transparent">
@@ -274,7 +267,7 @@ export default function Home() {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 1 + i * 0.1 }}
-                            className="absolute w-3 h-3 rounded-full bg-primary"
+                            className="absolute w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_var(--primary)]"
                             style={{
                               top: `${(50 - 45 * Math.cos((deg * Math.PI) / 180)).toFixed(4)}%`,
                               left: `${(50 + 45 * Math.sin((deg * Math.PI) / 180)).toFixed(4)}%`,
@@ -287,10 +280,10 @@ export default function Home() {
 
                     <div className="ml-auto w-[55%] md:w-[60%] space-y-3">
                       {[
-                        { label: "Mobility Score", value: 72, color: "from-cyan-500 to-teal-400", icon: Network },
-                        { label: "Air Quality Index", value: 85, color: "from-emerald-500 to-green-400", icon: Leaf },
-                        { label: "Energy Efficiency", value: 68, color: "from-amber-500 to-orange-400", icon: Zap },
-                        { label: "Service Coverage", value: 91, color: "from-violet-500 to-purple-400", icon: MapPin }
+                        { label: "Mobility Score", value: 72, color: "from-primary to-cyan-400", icon: Network },
+                        { label: "Air Quality Index", value: 85, color: "from-emerald-400 to-green-500", icon: Leaf },
+                        { label: "Energy Efficiency", value: 68, color: "from-amber-400 to-orange-500", icon: Zap },
+                        { label: "Service Coverage", value: 91, color: "from-indigo-500 to-purple-500", icon: Building }
                       ].map((metric, i) => {
                         const Icon = metric.icon;
                         return (
@@ -364,8 +357,8 @@ export default function Home() {
                       />
                       <defs>
                         <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#22d3d1" stopOpacity="0.8" />
-                          <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.3" />
+                          <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#22d3d1" stopOpacity="0.3" />
                         </linearGradient>
                         <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
                           <stop offset="0%" stopColor="#10b981" stopOpacity="0.8" />
@@ -376,8 +369,8 @@ export default function Home() {
                           <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
                         </linearGradient>
                         <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-                          <stop offset="100%" stopColor="#a855f7" stopOpacity="0.3" />
+                          <stop offset="0%" stopColor="#4f46e5" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.3" />
                         </linearGradient>
                       </defs>
                     </svg>
@@ -388,7 +381,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-border/50">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-border/50 bg-background/50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0 }}
@@ -403,9 +396,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="text-center"
+                  className="text-center group"
                 >
-                  <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">{stat.value}</div>
+                  <div className="text-4xl sm:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform font-display">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
               ))}
@@ -421,7 +414,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 What is a <span className="text-primary">Digital Twin?</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -444,7 +437,7 @@ export default function Home() {
                     </div>
                     Traditional Dashboards
                   </h3>
-                  <ul className="space-y-2 text-muted-foreground">
+                  <ul className="space-y-2 text-muted-foreground reveal-stagger">
                     <li className="flex items-start gap-2">
                       <span className="text-rose-400 mt-1">-</span>
                       <span>Show isolated metrics without connections</span>
@@ -464,14 +457,14 @@ export default function Home() {
                   </ul>
                 </div>
 
-                <div className="glass-panel rounded-2xl p-6 border-primary/30">
+                <div className="glass-panel rounded-2xl p-6 border-primary/30 neon-glow">
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                       <Globe className="w-5 h-5 text-primary" />
                     </div>
                     InfraSphere Digital Twin
                   </h3>
-                  <ul className="space-y-2 text-muted-foreground">
+                  <ul className="space-y-2 text-muted-foreground reveal-stagger">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                       <span>Visualizes cause-effect relationships across systems</span>
@@ -501,9 +494,9 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-6">How Cause and Effect Works</h3>
                 <div className="space-y-4">
                   {[
-                    { cause: "Increase public transport funding", effect: "Reduced traffic, lower emissions, better mobility score", arrow: "from-cyan-500 to-emerald-500" },
-                    { cause: "Add green zones in industrial area", effect: "Lower pollution index, improved air quality, health benefits", arrow: "from-emerald-500 to-green-500" },
-                    { cause: "Deploy renewable energy grid", effect: "Reduced energy load, sustainability score increase", arrow: "from-amber-500 to-orange-500" }
+                    { cause: "Increase public transport funding", effect: "Reduced traffic, lower emissions, better mobility score", arrow: "from-primary to-cyan-400" },
+                    { cause: "Add green zones in industrial area", effect: "Lower pollution index, improved air quality, health benefits", arrow: "from-emerald-400 to-green-500" },
+                    { cause: "Deploy renewable energy grid", effect: "Reduced energy load, sustainability score increase", arrow: "from-amber-400 to-orange-500" }
                   ].map((item, i) => (
                     <motion.div
                       key={item.cause}
@@ -533,15 +526,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-          <div className="max-w-7xl mx-auto">
+        <section className="relative py-24 px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
+          <div className="relative max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 Why <span className="text-primary">Governments Need This Now</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -559,7 +553,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="glass-panel rounded-2xl p-6 text-center"
+                    className="glass-panel rounded-2xl p-6 text-center hover:bg-secondary/40 transition-colors"
                   >
                     <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
                       <Icon className="w-7 h-7 text-primary" />
@@ -581,7 +575,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 Powerful <span className="text-primary">Capabilities</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -613,7 +607,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background/50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -621,7 +615,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 <span className="text-primary">Simulation Engine</span> Logic
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -642,8 +636,8 @@ export default function Home() {
                     transition={{ delay: i * 0.1 }}
                     className="relative"
                   >
-                    <div className="glass-panel rounded-2xl p-6 h-full">
-                      <div className="text-4xl font-bold text-primary/30 mb-3">{step.step}</div>
+                    <div className="glass-panel rounded-2xl p-6 h-full hover:border-primary/30 transition-colors">
+                      <div className="text-4xl font-bold text-primary/30 mb-3 font-display">{step.step}</div>
                       <h3 className="font-semibold mb-2">{step.title}</h3>
                       <p className="text-sm text-muted-foreground">{step.description}</p>
                     </div>
@@ -659,7 +653,7 @@ export default function Home() {
               className="mt-12 glass-panel rounded-2xl p-8"
             >
               <h3 className="text-xl font-semibold mb-6 text-center">Trade-Off Visualization Example</h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-6 reveal-stagger">
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
                   <h4 className="font-medium text-emerald-400 mb-2">Positive Impact</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
@@ -697,7 +691,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 Users & <span className="text-primary">Role-Based Access</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -735,15 +729,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-          <div className="max-w-7xl mx-auto">
+        <section className="relative py-24 px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
+          <div className="relative max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 Implementation <span className="text-primary">Roadmap</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -766,7 +761,7 @@ export default function Home() {
                     <span className="text-xs text-muted-foreground">{phase.duration}</span>
                   </div>
                   <h3 className="font-semibold mb-4">{phase.title}</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 reveal-stagger">
                     {phase.items.map(item => (
                       <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
@@ -792,7 +787,7 @@ export default function Home() {
                 <Award className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-muted-foreground">GovTech Excellence Criteria</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-display">
                 Built for <span className="text-primary">Global Recognition</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -835,7 +830,7 @@ export default function Home() {
               className="glass-panel rounded-3xl p-12 text-center neon-glow"
             >
               <Rocket className="w-16 h-16 text-primary mx-auto mb-6 animate-float" />
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-display">
                 Ready to Transform Your City?
               </h2>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">

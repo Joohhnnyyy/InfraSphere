@@ -36,14 +36,14 @@ export default function SignupPage() {
           </p>
         </div>
 
-        <Card className="glass-panel border-sidebar-border/50 shadow-xl backdrop-blur-xl">
+        <Card className="glass-panel border-border/50 shadow-xl backdrop-blur-xl">
           <CardHeader>
             <CardTitle>Sign Up</CardTitle>
             <CardDescription>
               Enter your details to create your account
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 reveal-stagger">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First name</Label>
@@ -52,7 +52,7 @@ export default function SignupPage() {
                   <Input 
                     id="firstName" 
                     placeholder="John" 
-                    className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                    className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                   />
                 </div>
               </div>
@@ -61,7 +61,7 @@ export default function SignupPage() {
                 <Input 
                   id="lastName" 
                   placeholder="Doe" 
-                  className="bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function SignupPage() {
                   id="email" 
                   placeholder="name@example.com" 
                   type="email" 
-                  className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function SignupPage() {
                 <Input 
                   id="organization" 
                   placeholder="City Planning Dept." 
-                  className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function SignupPage() {
                   id="password" 
                   type="password" 
                   placeholder="Create a password" 
-                  className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function SignupPage() {
                   id="confirmPassword" 
                   type="password" 
                   placeholder="Confirm your password" 
-                  className="pl-9 bg-secondary/50 border-sidebar-border/50 focus:bg-background transition-colors"
+                  className="pl-9 bg-secondary/50 border-border/50 focus:bg-background transition-colors"
                 />
               </div>
             </div>
