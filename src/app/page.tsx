@@ -276,8 +276,8 @@ export default function Home() {
                             transition={{ delay: 1 + i * 0.1 }}
                             className="absolute w-3 h-3 rounded-full bg-primary"
                             style={{
-                              top: `${50 - 45 * Math.cos((deg * Math.PI) / 180)}%`,
-                              left: `${50 + 45 * Math.sin((deg * Math.PI) / 180)}%`,
+                              top: `${(50 - 45 * Math.cos((deg * Math.PI) / 180)).toFixed(4)}%`,
+                              left: `${(50 + 45 * Math.sin((deg * Math.PI) / 180)).toFixed(4)}%`,
                               transform: "translate(-50%, -50%)"
                             }}
                           />
