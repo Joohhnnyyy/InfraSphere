@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: InfraSphere
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: InfraSphere Team
+repository-code: 'https://github.com/Joohhnnyyy/InfraSphere'
+url: 'https://infrasphere.vercel.app'
+abstract: >-
+  InfraSphere is a smart city digital twin platform
+  designed to transform how cities are planned, governed,
+  and understood.
+keywords:
+  - digital-twin
+  - smart-city
+  - govtech
+  - urban-planning
+license: MIT
