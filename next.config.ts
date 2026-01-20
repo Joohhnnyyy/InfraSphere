@@ -20,9 +20,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
+  /*
   turbopack: {
     rules: {
       "*.{jsx,tsx}": {
@@ -30,6 +31,7 @@ const nextConfig: NextConfig = {
       }
     }
   }
+  */
 };
 
 export default nextConfig;
